@@ -17,29 +17,44 @@ void pause() {
 }
 // MAIN
 void main() {
-	cout << "Please enter a three digit number: ";
-	int x;//x is three digit number
-	cin >> x;
-	int A, B, C; //C is ones digit. B is tens digit. A is hundreds digit
-	C = x % 10; //Gets last digit
-	x /= 10; //Omits last digit of x
-	B = x % 10; //Gets last digit
-	x /= 10; //Omits last digit
-	A = x; //One digit left
-	if (A > B && B > C)
+	for (size_t i = 0; i < 30; i++)
 	{
-		cout << "Descending" << endl; //If the numbers are in order from greatest to least, output is "Ascending"
+
+		// defining and assigning variables
+		int User_Number; //Use semi-representative varibales
+		int First_Digit; //Use semi-representative varibales
+		int Second_Digit; //Use semi-representative varibales
+		int Third_Digit; //Use semi-representative varibales
+		int y;
+
+		cout << "Please enter  3 digit number . . ." << endl;
+		cin >> User_Number; // generate random 3 digit numbers... ex: '391'
+							// MAIN
+							//Defining variables
+		First_Digit = User_Number / 100;
+
+		y = User_Number / 10;
+
+		Second_Digit = y % 10;
+
+		Third_Digit = User_Number % 10;
+		// user queries
+		cout << User_Number << endl;
+		if (First_Digit > Second_Digit && Second_Digit > Third_Digit) {
+			cout << "Descending" << endl;
+		}
+		else if (First_Digit < Second_Digit && Second_Digit < Third_Digit) {
+			cout << "Ascending" << endl;
+		}
+		else {
+			cout << "Neither" << endl;
+		}
+
+		pause(); // pauses to see the displayed text
 	}
-	else if (A < B && B < C)
-	{
-		cout << "Ascending" << endl; //If the numbers are in order from least to greatest, output  is "Descending"
-	}
-	else
-	{
-		cout << "Neither" << endl; //If neither case is true, output is "Neither"
-	}
-	pause(); // Pauses to see the displayed text
 }
+
+
 
 
 
